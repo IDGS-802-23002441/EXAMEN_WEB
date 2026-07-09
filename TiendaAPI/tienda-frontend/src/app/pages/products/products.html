@@ -1,0 +1,75 @@
+<section class="products-hero py-5">
+	<div class="container">
+		<div class="row align-items-center g-4">
+			<div class="col-lg-8">
+				<span class="eyebrow">Catálogo</span>
+				<h1 class="display-5 fw-bold text-white mt-3">Encuentra productos desde SQL Server en tiempo real.</h1>
+				<p class="lead text-white-50 mt-3">
+					Usa la búsqueda instantánea y el filtro por categoría para recorrer el inventario completo sin recargar la página.
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<div class="stats-panel p-4 text-white">
+					<div class="stat-item">
+						<strong>{{ filteredProducts.length }}</strong>
+						<span>productos visibles</span>
+					</div>
+					<div class="stat-item mt-3">
+						<strong>{{ categories.length }}</strong>
+						<span>categorías disponibles</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="catalog-section py-5">
+	<div class="container">
+		<div class="filters-panel p-4 p-lg-5 mb-4">
+			<div class="row g-3 align-items-end">
+				<div class="col-lg-8">
+					<label for="searchInput" class="form-label fw-semibold">Buscar producto</label>
+					<input
+						id="searchInput"
+						type="search"
+						class="form-control form-control-lg"
+						placeholder="Escribe un nombre, descripción o categoría..."
+						[(ngModel)]="searchTerm"
+						(ngModelChange)="onFiltersChange()"
+					/>
+				</div>
+
+				<div class="col-lg-4">
+					<label for="categorySelect" class="form-label fw-semibold">Filtrar por categoría</label>
+					<select
+						id="categorySelect"
+						class="form-select form-select-lg"
+						[(ngModel)]="selectedCategoryId"
+						(ngModelChange)="onFiltersChange()"
+					>
+						<option [ngValue]="0">Todas las categorías</option>
+						<option *ngFor="let category of categories" [ngValue]="category.id">
+							{{ category.nombre }}
+						</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div *ngIf="loading" class="text-center py-5 text-muted">Cargando catálogo...</div>
+
+		<div *ngIf="errorMessage" class="alert alert-danger border-0 shadow-sm">{{ errorMessage }}</div>
+
+		<div *ngIf="!loading && !errorMessage && filteredProducts.length === 0" class="empty-state text-center py-5">
+			<h2 class="h4">No se encontraron productos</h2>
+			<p class="text-muted mb-0">Prueba con otro texto o cambia el filtro de categoría.</p>
+		</div>
+
+		<div class="row g-4" *ngIf="!loading && !errorMessage && filteredProducts.length > 0">
+			<div class="col-md-6 col-xl-4" *ngFor="let product of filteredProducts">
+				<app-product-card [product]="product"></app-product-card>
+			</div>
+		</div>
+	</div>
+</section>

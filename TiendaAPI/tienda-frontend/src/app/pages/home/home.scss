@@ -1,0 +1,82 @@
+ :host {
+	display: block;
+ }
+
+.hero-section {
+	background:
+		radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 28%),
+		linear-gradient(135deg, #0b1020 0%, #15244a 52%, #23396d 100%);
+}
+
+.eyebrow,
+.section-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #8fd3ff;
+}
+
+.hero-card,
+.info-panel {
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 1.5rem;
+	color: #fff;
+	backdrop-filter: blur(18px);
+	box-shadow: 0 24px 64px rgba(9, 15, 33, 0.24);
+}
+
+.metric-card {
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 1rem;
+	padding: 1rem;
+	height: 100%;
+}
+
+.metric-card strong {
+	display: block;
+	font-size: 1.4rem;
+	margin-bottom: 0.25rem;
+}
+
+.metric-card span,
+.info-panel p,
+.mini-feature p {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.company-section,
+.featured-section {
+	background: linear-gradient(180deg, #f5f7fc 0%, #eef2f8 100%);
+}
+
+.info-panel {
+	color: #0d1b35;
+	background: #fff;
+	border-color: rgba(18, 34, 68, 0.08);
+}
+
+.info-panel p,
+.mini-feature p {
+	color: #5b6478;
+}
+
+.accent-panel {
+	background: linear-gradient(145deg, #ffffff 0%, #f4f8ff 100%);
+}
+
+.mini-feature {
+	background: #fff;
+	border: 1px solid rgba(18, 34, 68, 0.08);
+	border-radius: 1rem;
+	padding: 1rem;
+	height: 100%;
+}
+
+.highlight-link {
+	color: #0c4dcf;
+}

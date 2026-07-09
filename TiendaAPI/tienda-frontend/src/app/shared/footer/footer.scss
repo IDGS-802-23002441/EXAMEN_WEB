@@ -1,0 +1,30 @@
+ :host {
+	display: block;
+ }
+
+.site-footer {
+	background: linear-gradient(135deg, #07111f 0%, #0f1d33 100%);
+	color: #fff;
+}
+
+.footer-heading {
+	color: #9ecbff;
+	letter-spacing: 0.12em;
+}
+
+.footer-links a,
+.footer-bottom {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-links a {
+	text-decoration: none;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+.footer-bottom {
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,116 @@
+<section class="hero-section">
+	<div class="container py-5">
+		<div class="row align-items-center g-4">
+			<div class="col-lg-6">
+				<span class="eyebrow">Tienda de productos</span>
+				<h1 class="display-4 fw-bold text-white mt-3">
+					Tecnología, hogar y estilo en una sola experiencia.
+				</h1>
+				<p class="lead text-white-50 mt-4">
+					Nuestra plataforma centraliza inventario real desde SQL Server para navegar productos, explorar categorías y
+					consultar información actualizada sin datos simulados.
+				</p>
+				<div class="d-flex flex-wrap gap-3 mt-4">
+					<a routerLink="/productos" class="btn btn-primary btn-lg px-4">Ver productos</a>
+					<a routerLink="/productos" class="btn btn-outline-light btn-lg px-4">Explorar catálogo</a>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="hero-card p-4 p-md-5">
+					<div class="row g-3 text-center text-md-start">
+						<div class="col-md-4">
+							<div class="metric-card">
+								<strong>100%</strong>
+								<span>Datos desde SQL Server</span>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="metric-card">
+								<strong>2 capas</strong>
+								<span>Backend + Angular</span>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="metric-card">
+								<strong>Bootstrap</strong>
+								<span>Responsive y limpio</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="company-section py-5">
+	<div class="container">
+		<div class="row g-4 align-items-stretch">
+			<div class="col-lg-5">
+				<div class="info-panel h-100">
+					<span class="section-label">Quiénes somos</span>
+					<h2 class="mt-3">Una tienda pensada para mostrar catálogo real y navegación simple.</h2>
+					<p class="mt-3">
+						El objetivo de esta aplicación es servir como base para una tienda de productos con arquitectura sencilla,
+						separación clara entre API y frontend, y un flujo de datos persistente en SQL Server.
+					</p>
+				</div>
+			</div>
+
+			<div class="col-lg-7">
+				<div class="info-panel h-100 accent-panel">
+					<span class="section-label">Nuestra propuesta</span>
+					<div class="row g-3 mt-1">
+						<div class="col-md-6">
+							<div class="mini-feature">
+								<h3>Catálogo centralizado</h3>
+								<p>Productos y categorías viven en la API y se leen directamente desde la base de datos.</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="mini-feature">
+								<h3>Experiencia fluida</h3>
+								<p>La página de productos incluye búsqueda en tiempo real y filtro por categoría.</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="mini-feature">
+								<h3>Componentes standalone</h3>
+								<p>El frontend está organizado con componentes independientes, servicios y rutas claras.</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="mini-feature">
+								<h3>Base escalable</h3>
+								<p>La estructura permite crecer después con autenticación, carrito o panel administrativo.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="featured-section py-5">
+	<div class="container">
+		<div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+			<div>
+				<span class="section-label">Destacados</span>
+				<h2 class="mt-2 mb-0">Productos seleccionados</h2>
+			</div>
+			<a routerLink="/productos" class="text-decoration-none fw-semibold highlight-link">Ir al catálogo completo</a>
+		</div>
+
+		<div *ngIf="loading" class="text-center py-5 text-muted">Cargando productos destacados...</div>
+
+		<div *ngIf="errorMessage" class="alert alert-warning border-0 shadow-sm">{{ errorMessage }}</div>
+
+		<div class="row g-4" *ngIf="!loading && !errorMessage">
+			<div class="col-md-6 col-xl-3" *ngFor="let product of featuredProducts">
+				<app-product-card [product]="product"></app-product-card>
+			</div>
+		</div>
+	</div>
+</section>

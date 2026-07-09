@@ -1,0 +1,29 @@
+ :host {
+	display: block;
+ }
+
+.product-card {
+	border-radius: 1.35rem;
+	box-shadow: 0 20px 48px rgba(15, 29, 52, 0.1);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 24px 60px rgba(15, 29, 52, 0.16);
+}
+
+.product-image {
+	height: 220px;
+	object-fit: cover;
+}
+
+.category-badge {
+	background: rgba(11, 98, 255, 0.1);
+	color: #0b62ff;
+	font-weight: 700;
+}
+
+.price {
+	color: #0a1f44;
+}

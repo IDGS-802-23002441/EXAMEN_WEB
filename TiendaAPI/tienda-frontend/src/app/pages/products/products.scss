@@ -1,0 +1,53 @@
+ :host {
+	display: block;
+ }
+
+.products-hero {
+	background:
+		radial-gradient(circle at top right, rgba(114, 191, 255, 0.18), transparent 26%),
+		linear-gradient(135deg, #08111f 0%, #14305d 60%, #254880 100%);
+}
+
+.eyebrow {
+	display: inline-flex;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.75rem;
+	font-weight: 800;
+	color: #98dcff;
+}
+
+.stats-panel,
+.filters-panel {
+	border-radius: 1.5rem;
+	box-shadow: 0 18px 50px rgba(13, 26, 50, 0.1);
+}
+
+.stats-panel {
+	background: rgba(255, 255, 255, 0.09);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	backdrop-filter: blur(14px);
+}
+
+.stat-item strong {
+	display: block;
+	font-size: 2rem;
+	line-height: 1;
+}
+
+.stat-item span {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.catalog-section {
+	background: linear-gradient(180deg, #f5f7fc 0%, #edf1f8 100%);
+}
+
+.filters-panel {
+	background: #fff;
+	border: 1px solid rgba(18, 34, 68, 0.08);
+}
+
+.empty-state {
+	color: #485266;
+}
